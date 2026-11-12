@@ -1,0 +1,8 @@
+path: C:\Users\dines\Downloads\wildfire-project-bengaluru-live-weather\wildfire-project-bengaluru\data\processed
+train: train/images
+val: val/images
+test: test/images
+names:
+  0: fire
+  1: smoke
+'# Note': Images are linked from original dataset

@@ -1,0 +1,42 @@
+{
+  "dataset": "FASDD_UAV",
+  "source_format": "COCO",
+  "classes": {
+    "0": "fire",
+    "1": "smoke"
+  },
+  "sampling": {
+    "max_images_per_split": 100,
+    "seed": 42,
+    "description": "Deterministic class-balanced pilot sample"
+  },
+  "splits": {
+    "train": {
+      "images": 100,
+      "annotations": 413,
+      "images_with_annotations": 76
+    },
+    "val": {
+      "images": 100,
+      "annotations": 380,
+      "images_with_annotations": 81
+    },
+    "test": {
+      "images": 100,
+      "annotations": 365,
+      "images_with_annotations": 75
+    }
+  },
+  "total_images": 300,
+  "total_annotations": 1158,
+  "total_images_with_annotations": 232,
+  "negative_samples": 68,
+  "images_linked": 0,
+  "images_hardlinked": 300,
+  "images_copied": 0,
+  "images_fallback_copy": 0,
+  "images_missing": 0,
+  "invalid_boxes": 1,
+  "skipped_annotations": 0,
+  "orphan_annotations": 0
+}
