@@ -1,0 +1,38 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+.venv*
+.env
+.env.*
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Build and distribution
+build/
+dist/
+*.so
+
+# Local data and generated artifacts
+reports/
+logs/
+*.log
+models/
+runs/
+*.pt
+*.onnx
+*.engine
+*.db
+*.sqlite
+fireguard/local_settings.json
+
+# Frontend
+node_modules/
+dashboard/dist/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

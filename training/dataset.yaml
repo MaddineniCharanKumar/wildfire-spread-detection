@@ -1,0 +1,19 @@
+# FASDD UAV Fire/Smoke Dataset - YOLO Format
+# Generated from COCO annotations by scripts/convert_coco_to_yolo.py
+# Classes: 0=fire, 1=smoke
+
+path: ../data/processed
+train: train
+val: val
+test: test
+
+names:
+  0: 'fire'
+  1: 'smoke'
+
+# Note: Images are not included in this repository.
+# Download from original FASDD source and place in:
+#   data/processed/train/images/
+#   data/processed/val/images/
+#   data/processed/test/images/
+# Then run: python scripts/convert_coco_to_yolo.py --copy-images --images-root <path_to_images>

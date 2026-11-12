@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    command: uvicorn fireguard.api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      FIREGUARD_DEMO_MODE: 'false'
+      FIREGUARD_DATABASE_URL: sqlite:///./fireguard.db
+      FIREGUARD_CORS_ORIGINS: http://localhost:5173
+      FIREGUARD_LATITUDE: ${FIREGUARD_LATITUDE:-}
+      FIREGUARD_LONGITUDE: ${FIREGUARD_LONGITUDE:-}
+      FIREGUARD_ENVIRONMENT_PROVIDER: ${FIREGUARD_ENVIRONMENT_PROVIDER:-open_meteo}
+      FIREGUARD_NWS_USER_AGENT: ${FIREGUARD_NWS_USER_AGENT:-}
+      FIREGUARD_FIRMS_MAP_KEY: ${FIREGUARD_FIRMS_MAP_KEY:-}
+      FIREGUARD_FIRMS_SOURCE: ${FIREGUARD_FIRMS_SOURCE:-VIIRS_NOAA21_NRT,VIIRS_NOAA20_NRT,VIIRS_SNPP_NRT}
+      FIREGUARD_FIRMS_RADIUS_KM: ${FIREGUARD_FIRMS_RADIUS_KM:-250}
+
+  dashboard:
+    build: ./dashboard
+    command: npm run dev -- --host 0.0.0.0
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+      VITE_MAP_LATITUDE: ${FIREGUARD_LATITUDE:-20.5937}
+      VITE_MAP_LONGITUDE: ${FIREGUARD_LONGITUDE:-78.9629}

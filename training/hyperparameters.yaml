@@ -1,0 +1,27 @@
+# Training hyperparameters — tune only after dataset inspection
+# Used by training/train.py when calling model.train(**hyperparams)
+
+optimizer: "auto"        # SGD, Adam, AdamW, auto
+lr0: 0.01                # initial learning rate
+lrf: 0.01                # final learning rate factor
+momentum: 0.937          # SGD momentum / Adam beta1
+weight_decay: 0.0005     # optimizer weight decay
+warmup_epochs: 3.0       # warmup epochs
+warmup_momentum: 0.8     # warmup initial momentum
+warmup_bias_lr: 0.1      # warmup initial bias lr
+cos_lr: true             # cosine LR scheduler
+patience: 20             # early stopping patience
+augment: true            # enable augmentation
+mosaic: 1.0              # mosaic augmentation prob
+mixup: 0.1               # mixup augmentation prob
+copy_paste: 0.1          # copy-paste augmentation prob
+degrees: 0.0             # rotation degrees
+translate: 0.1           # translation fraction
+scale: 0.5               # scale fraction
+shear: 0.0               # shear degrees
+perspective: 0.0         # perspective fraction
+flipud: 0.0              # flip up-down prob
+fliplr: 0.5              # flip left-right prob
+hsv_h: 0.015             # HSV-Hue augmentation
+hsv_s: 0.7               # HSV-Saturation augmentation
+hsv_v: 0.4               # HSV-Value augmentation
